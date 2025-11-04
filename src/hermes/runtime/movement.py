@@ -180,8 +180,8 @@ def update_after_movementy2_negative(x, y, z, val, nx_old, ny_old, nz_old, hxval
     nx_old2, ny_old2, nz_old2, hxval2, hyval2, hzval2: Grid of val2
     xold2min, yold2min, zold2min: Extracted from the coordinate of the outer level (before movement)
     '''
-    yin = y[index_y+1:]
-    yout = y[0:index_y+1]
+    yin = y[index_y:]
+    yout = y[0:index_y]
 
     trilinear_interpolation[blocks_per_grid_in, threads_per_block_in](x, yin, z, val, nx_old, ny_old, nz_old, hxval, hyval, hzval, xoldmin, yoldmin, zoldmin, nx, ny_in, nz, uin, one)
     trilinear_interpolation[blocks_per_grid_out, threads_per_block_out](x, yout, z, val2, nx_old2, ny_old2, nz_old2, hxval2, hyval2, hzval2, xold2min, yold2min, zold2min, nx, ny_out, nz, uout, one)
@@ -230,8 +230,8 @@ def update_after_movementx2_negative(x, y, z, val, nx_old, ny_old, nz_old, hxval
     nx_old2, ny_old2, nz_old2, hxval2, hyval2, hzval2: Grid of val2
     xold2min, yold2min, zold2min: Extracted from the coordinate of the outer level (before movement)
     '''
-    xin = x[index_x+1:]
-    xout = x[0:index_x+1]
+    xin = x[index_x:]
+    xout = x[0:index_x]
 
     trilinear_interpolation[blocks_per_grid_in, threads_per_block_in](xin, y, z, val, nx_old, ny_old, nz_old, hxval, hyval, hzval,xoldmin, yoldmin, zoldmin, nx_in, ny, nz, uin, one)    
     trilinear_interpolation[blocks_per_grid_out, threads_per_block_out](xout, y, z, val2, nx_old2, ny_old2, nz_old2, hxval2, hyval2, hzval2, xold2min, yold2min, zold2min, nx_out, ny, nz, uout, one)
@@ -267,7 +267,7 @@ def update_after_movement_level3y_2_negative(x, y, z, val, nx_old, ny_old, nz_ol
     ny, nx_in, nz: size of uin
     '''
     
-    yin = y[index_y+1:]
+    yin = y[index_y:]
 
     trilinear_interpolation[blocks_per_grid_in, threads_per_block_in](x, yin, z, val, nx_old, ny_old, nz_old, hxval, hyval, hzval, xoldmin_lin, yoldmin_lin, zoldmin_lin, nx, ny_in, nz, uin, one)
 
@@ -299,7 +299,7 @@ def update_after_movement_level3x_2_negative(x, y, z, val, nx_old, ny_old, nz_ol
     ny, nx_in, nz: size of uin
     '''
     
-    xin = x[index_x+1:]
+    xin = x[index_x:]
 
     trilinear_interpolation[blocks_per_grid_in, threads_per_block_in](xin, y, z, val, nx_old, ny_old, nz_old, hxval, hyval, hzval, xoldmin_lin, yoldmin_lin, zoldmin_lin, nx_in, ny, nz, uin, one)
 
