@@ -75,7 +75,8 @@ def build_waypoints_nd_from_ini(path_ini: str | Path, len_scale: float) -> "np.n
         y0 = parse_length_expr(sec.get("y0", "0"))
         repeat = int(sec.get("repeat", "1"))
         segments = []
-        for key in sorted(k for k in sec if k.startswith("segment.")):
+        for key in sorted((k for k in sec if k.startswith("segment.")),
+                  key=lambda s: int(s.split(".")[1])):
             line = sec.get(key, "").strip()
             if not line:
                 continue
