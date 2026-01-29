@@ -25,17 +25,6 @@ This solver is being developed as part of a research project on **fast, scalable
 
 If you are using the codes in this repository, please cite the following paper
 ```
-@article{qin2022dendrite,
-  title={Dendrite-resolved, full-melt-pool phase-field simulations to reveal non-steady-state effects and to test an approximate model},
-  author={Qin, Yigong and Bao, Yuanxun and DeWitt, Stephen and Radhakrishnan, Balasubramanian and Biros, George},
-  journal={Computational Materials Science},
-  volume={207},
-  pages={111262},
-  year={2022},
-  publisher={Elsevier}
-  url = {https://www.sciencedirect.com/science/article/pii/S0927025622000660}
-}
-
 @article{aydin2026hermes,
   title={HERMES: A fast transient heat transfer solver for metal additive manufacturing},
   author={Aydin, Hikmet Alperen and Biros, George},
